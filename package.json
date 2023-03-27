@@ -1,0 +1,32 @@
+{
+  "name": "wat-sourcing-backend",
+  "version": "1.0.0",
+  "description": "This is a backend app for wat sourcing.",
+  "main": "app.js",
+  "scripts": {
+    "start": "pm2-runtime start ./configuration/ecosystem.config.js --env production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.idc.tarento.com/igot-products/wat/wat-sourcing-backend.git"
+  },
+  "author": "Shoaib Mohmad",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "js-yaml": "^4.1.0",
+    "json2csv": "^5.0.6",
+    "jsonschema": "^1.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "pm2": "^5.1.1",
+    "swagger-ui-express": "^4.3.0"
+  }
+}

@@ -1,0 +1,49 @@
+version: '3.3'
+services:
+    db:
+        image: 'mysql:5.7.22'
+        container_name: db-mysql
+        restart: unless-stopped
+        env_file: .env
+        tty: true
+        ports:
+            - 3307:3307
+        environment:
+            MYSQL_DATABASE: $MYSQL_DATABASE
+            MYSQL_USER_NAME: $MYSQL_USER_PASSWORD
+            MYSQL_USER_PASSWORD: $MYSQL_USER_PASSWORD
+            SERVICE_TAGS: prod
+            SERVICE_NAME: db-mysql
+        volumes:
+            - dbdata:/var/lib/mysql
+            - ./mysql/my.cnf:/etc/mysql/my.cnf
+        networks:
+            - app-network
+    app:
+        container_name: node-app
+        image: 'keymetrics/pm2:latest-alpine'
+        restart: 'on-failure'
+        tty: true
+        working_dir: /var/www
+        command: npm start
+        environment:
+            APP_ENV: $APP_ENV
+            APP_NAME: $APP_NAME
+            APP_DEBUG: $APP_DEBUG
+            SERVICE_NAME: node-app-wat
+        ports:
+            - 3000:3000
+        volumes:
+            - './:/var/www/'
+        networks:
+            - app-network
+networks:
+    app-network:
+        driver: bridge
+
+#Volumes
+volumes:
+    cachedata:
+      driver: local
+    dbdata:
+      driver: local

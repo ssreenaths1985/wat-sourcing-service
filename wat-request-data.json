@@ -1,0 +1,22 @@
+{
+    "userName": "Shoaib Mohmad",
+    "userDesignation": "Principal Software Engineer",
+    "userWorkEmail": "shoiab.mohmad@tarento.com",
+    "reportingOfficerName": "Jinesh Sumedhan",
+    "reportingOfficerDesignation": "Director",
+    "reportingOfficerDepartment": "NXT",
+    "roles": [
+        {
+            "roleLabel": "Role 1",
+            "roleDescription": "This is Role 1.",
+            "activities": [{"0": "Activity 1"}, {"1": "Activity 2"}],
+            "competencies": [{"0": "Competency 1"}, {"1": "Competency 2"}]
+        },
+        {
+            "roleLabel": "Role 2",
+            "roleDescription": "This is Role 2.",
+            "activities": [{"0": "Activity 21"}, {"1": "Activity 22"}],
+            "competencies": [{"0": "Competency 22"}, {"1": "Competency 23"}]
+        }
+    ]
+}
